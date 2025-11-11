@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan de Bienestar</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img src="img/logo.png" alt="Logo Innovatech" />
+        <h1>Programa de Bienestar Laboral</h1>
+      </div>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="diagnostico.html">Diagnóstico</a>
+        <a href="plan.html">Plan de Bienestar</a>
+        <a href="evaluacion.html">Evaluación</a>
+        <a href="asistencia.html">Asistencia</a>
+        <a href="encuesta.html">Encuesta</a>
+      </nav>
+    </header>
+
+    <main>
+      <form id="planForm">
+        <label>Nombre de la Actividad</label
+        ><input type="text" id="actividad" required />
+        <label>Tipo de Actividad</label>
+        <select id="tipo" required>
+          <option value="">Seleccionar...</option>
+          <option>Recreativa</option>
+          <option>Cultural</option>
+          <option>Deportiva</option>
+          <option>Educativa</option>
+          <option>Familiar</option>
+        </select>
+        <label>Fecha</label><input type="date" id="fecha" required />
+        <label>Responsable</label>
+        <select id="responsable" required>
+          <option value="">Seleccionar...</option>
+        </select>
+        <button type="submit">Guardar Actividad</button>
+      </form>
+      <div id="lista"></div>
+    </main>
+    <script src="js/plan.js"></script>
+  </body>
+</html>

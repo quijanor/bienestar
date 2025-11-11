@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnóstico</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Logo Innovatech">
+      <h1>Programa de Bienestar Laboral</h1>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="diagnostico.html">Diagnóstico</a>
+      <a href="plan.html">Plan de Bienestar</a>
+      <a href="evaluacion.html">Evaluación</a>
+      <a href="asistencia.html">Asistencia</a>
+      <a href="encuesta.html">Encuesta</a>
+    </nav>
+  </header>
+
+<main>
+
+    <form id='diagnosticoForm'>
+      <label>Nombre del colaborador</label><input type='text' id='nombre' required>
+      <label>Área</label><input type='text' id='area' required>
+      <label>Necesidad identificada</label><textarea id='necesidad' required></textarea>
+      <button type='submit'>Guardar</button>
+    </form>
+    <div id='lista'></div>
+    
+</main>
+<script src="js/diagnostico.js"></script>
+</body>
+</html>
