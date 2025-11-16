@@ -23,24 +23,16 @@ document.getElementById('btnCargar').addEventListener('click', () => {
 });
 
 // Descargar documento editado (HTML → DOCX)
-document.getElementById('saveBtn').addEventListener('click', () => {
+document.getElementById('saveBtn').addEventListener('click', async () => {
   const contenidoHTML = document.getElementById('editor').innerHTML;
 
-  const zip = new PizZip();
-  const doc = new window.docxtemplater(zip);
+  const converted = await window.docx.HtmlToDocx.toDocx(contenidoHTML, null, {
+    table: { row: { cantSplit: true } }
+  });
 
-  doc.setData({ text: contenidoHTML });
+  const blob = new Blob([converted], {
+    type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+  });
 
-  try {
-    doc.render();
-    const out = doc.getZip().generate({
-      type: 'blob',
-      mimeType:
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-    });
-    saveAs(out, 'documento_editado.docx');
-  } catch (error) {
-    console.error(error);
-    alert('Error generando documento');
-  }
+  saveAs(blob, 'documento_editado.docx');
 });
