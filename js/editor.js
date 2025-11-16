@@ -27,12 +27,10 @@ document.getElementById('saveBtn').addEventListener('click', () => {
   const contenidoHTML = document.getElementById('editor').innerHTML;
 
   const htmlCompleto = `
-    <!DOCTYPE html>
-    <html>
-      <head><meta charset="UTF-8"></head>
-      <body>${contenidoHTML}</body>
-    </html>
-  `;
+  <html>
+    <head><meta charset="UTF-8"></head>
+    <body>${contenidoHTML}</body>
+  </html>`;
 
   const blob = window.htmlDocx.asBlob(htmlCompleto);
 
