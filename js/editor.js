@@ -26,12 +26,15 @@ document.getElementById('btnCargar').addEventListener('click', () => {
 document.getElementById('saveBtn').addEventListener('click', () => {
   const contenidoHTML = document.getElementById('editor').innerHTML;
 
-  const html =
-    "<!DOCTYPE html><html><head><meta charset='UTF-8'></head><body>" +
-    contenidoHTML +
-    '</body></html>';
+  const htmlCompleto = `
+    <!DOCTYPE html>
+    <html>
+      <head><meta charset="UTF-8"></head>
+      <body>${contenidoHTML}</body>
+    </html>
+  `;
 
-  const blob = window.htmlDocx.asBlob(html);
+  const blob = window.htmlDocx.asBlob(htmlCompleto);
 
   saveAs(blob, 'documento_editado.docx');
 });
