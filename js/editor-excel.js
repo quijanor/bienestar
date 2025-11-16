@@ -12,6 +12,8 @@ document.getElementById('btnCargar').addEventListener('click', () => {
 
       const datos = XLSX.utils.sheet_to_json(hoja, { header: 1 });
 
+      console.log('DATOS CARGADOS:', datos);
+
       datosOriginales = datos;
 
       const contenedor = document.getElementById('excel');

@@ -192,10 +192,11 @@ footer p {
 }
 
 #excel {
-    width: 100%;
+    width: 100% !important;
     height: 500px !important;
-    border: 1px solid #ccc;
-    background: white;
-    margin-top: 20px;
+    min-height: 500px !important;
+    display: block !important;
+    background: white !important;
+    border: 1px solid #ccc !important;
 }
 
