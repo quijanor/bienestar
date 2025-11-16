@@ -1,48 +1,45 @@
 let tabla;
+let datosOriginales;
+let nombreArchivo = 'F-TH-02.xlsx';
 
-// Cargar automáticamente el archivo Excel desde docs/F-TH-02.xlsx
-fetch('docs/F-TH-02.xlsx')
-  .then((response) => response.arrayBuffer())
-  .then((data) => {
-    const workbook = XLSX.read(data, { type: 'array' });
-    const hojaNombre = workbook.SheetNames[0];
-    const hoja = workbook.Sheets[hojaNombre];
+document.getElementById('btnCargar').addEventListener('click', () => {
+  fetch('docs/' + nombreArchivo)
+    .then((res) => res.arrayBuffer())
+    .then((buffer) => {
+      const workbook = XLSX.read(buffer, { type: 'array' });
+      const nombreHoja = workbook.SheetNames[0];
+      const hoja = workbook.Sheets[nombreHoja];
 
-    const datos = XLSX.utils.sheet_to_json(hoja, { header: 1 });
+      const datos = XLSX.utils.sheet_to_json(hoja, { header: 1 });
 
-    const contenedor = document.getElementById('excel');
+      datosOriginales = datos;
 
-    tabla = new Handsontable(contenedor, {
-      data: datos,
-      rowHeaders: true,
-      colHeaders: true,
-      width: '100%',
-      height: 500,
-      licenseKey: 'non-commercial-and-evaluation',
-      contextMenu: true,
-      manualColumnResize: true,
-      manualRowResize: true,
-      filters: true,
-      dropdownMenu: true
-    });
-  })
-  .catch((err) => {
-    alert('No se pudo cargar docs/F-TH-02.xlsx');
-    console.error(err);
-  });
+      const contenedor = document.getElementById('excel');
 
-// Descargar archivo actualizado
-function descargarExcel() {
+      tabla = new Handsontable(contenedor, {
+        data: datos,
+        rowHeaders: true,
+        colHeaders: true,
+        width: '100%',
+        height: '500',
+        licenseKey: 'non-commercial-and-evaluation'
+      });
+    })
+    .catch((err) => alert('Error cargando Excel: ' + err));
+});
+
+document.getElementById('btnDescargar').addEventListener('click', () => {
   if (!tabla) {
-    alert('El archivo aún no se ha cargado.');
+    alert('Primero carga el archivo');
     return;
   }
 
   const datosEditados = tabla.getData();
+
   const hoja = XLSX.utils.aoa_to_sheet(datosEditados);
   const libro = XLSX.utils.book_new();
 
   XLSX.utils.book_append_sheet(libro, hoja, 'Hoja1');
 
-  XLSX.writeFile(libro, 'F-TH-02_editado.xlsx');
-}
+  XLSX.writeFile(libro, 'F-TH-02_EDITADO.xlsx');
+});

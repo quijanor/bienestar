@@ -5,48 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Editor Excel</title>
 
-    <!-- Handsontable -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/handsontable@14.0.0/dist/handsontable.min.css"
+      href="https://cdn.jsdelivr.net/npm/handsontable@13.0.0/dist/handsontable.full.min.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/handsontable@14.0.0/dist/handsontable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@13.0.0/dist/handsontable.full.min.js"></script>
 
-    <!-- SheetJS -->
-    <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 
-    <style>
-      body {
-        font-family: Arial;
-        padding: 20px;
-        background: #f2f2f2;
-      }
-      #excel {
-        margin-top: 20px;
-        background: white;
-        padding: 10px;
-      }
-      button {
-        padding: 10px 20px;
-        background: #004b8d;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        margin: 10px 5px;
-      }
-      button:hover {
-        background: #003866;
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Editor Excel – Bienestar Laboral</h1>
+    <header>
+      <div class="logo-container">
+        <img src="img/logo.png" />
+        <h1>Editor Excel</h1>
+      </div>
+    </header>
 
-    <button onclick="descargarExcel()">Descargar Excel Editado</button>
+    <main>
+      <h2>Documento Excel</h2>
+      <button id="btnCargar">Cargar F-TH-02.xlsx</button>
 
-    <div id="excel"></div>
+      <div id="excel"></div>
 
-    <script src="js/editor-excel.js"></script>
+      <button id="btnDescargar">Descargar Excel Editado</button>
+    </main>
+
+    <script src="js/editorExcel.js"></script>
   </body>
 </html>
