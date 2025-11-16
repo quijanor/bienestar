@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editor de Documentos</title>
+
+    <!-- Librerías -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pizzip/3.1.1/pizzip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pizzip/3.1.1/pizzip-utils.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.29.5/docxtemplater.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img src="img/logo.png" />
+        <h1>Editor de Documentos</h1>
+      </div>
+    </header>
+
+    <main>
+      <h2>Documentos disponibles</h2>
+      <select id="archivoSelect"></select>
+
+      <button id="btnCargar">Cargar Documento</button>
+
+      <h2>Contenido editable</h2>
+      <textarea id="editor" style="width: 100%; height: 300px"></textarea>
+
+      <button id="saveBtn">Descargar Documento</button>
+    </main>
+
+    <script src="js/editor.js"></script>
+  </body>
+</html>
