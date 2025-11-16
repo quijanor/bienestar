@@ -9,7 +9,7 @@ documentos.forEach((doc) => {
   select.appendChild(option);
 });
 
-// Cargar y convertir documento a HTML
+// Cargar documento y convertir a HTML
 document.getElementById('btnCargar').addEventListener('click', () => {
   const fileName = select.value;
 
@@ -22,17 +22,16 @@ document.getElementById('btnCargar').addEventListener('click', () => {
     .catch((err) => alert('Error al cargar documento: ' + err));
 });
 
-// Descargar documento editado (HTML → DOCX)
-document.getElementById('saveBtn').addEventListener('click', async () => {
+// Descargar como DOCX (HTML → DOCX)
+document.getElementById('saveBtn').addEventListener('click', () => {
   const contenidoHTML = document.getElementById('editor').innerHTML;
 
-  const converted = await window.docx.HtmlToDocx.toDocx(contenidoHTML, null, {
-    table: { row: { cantSplit: true } }
-  });
+  const html =
+    "<!DOCTYPE html><html><head><meta charset='UTF-8'></head><body>" +
+    contenidoHTML +
+    '</body></html>';
 
-  const blob = new Blob([converted], {
-    type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-  });
+  const blob = window.htmlDocx.asBlob(html);
 
   saveAs(blob, 'documento_editado.docx');
 });
