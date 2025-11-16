@@ -24,15 +24,20 @@ document.getElementById('btnCargar').addEventListener('click', () => {
 
 // Descargar como DOCX (HTML → DOCX)
 document.getElementById('saveBtn').addEventListener('click', () => {
-  const contenidoHTML = document.getElementById('editor').innerHTML;
+  const contenido = document.getElementById('editor').innerHTML;
 
-  const htmlCompleto = `
-  <html>
-    <head><meta charset="UTF-8"></head>
-    <body>${contenidoHTML}</body>
-  </html>`;
+  const html = `
+        <html xmlns:o='urn:schemas-microsoft-com:office:office'
+              xmlns:w='urn:schemas-microsoft-com:office:word'
+              xmlns='http://www.w3.org/TR/REC-html40'>
+        <head><meta charset="UTF-8"></head>
+        <body>${contenido}</body>
+        </html>
+    `;
 
-  const blob = window.htmlDocx.asBlob(htmlCompleto);
+  const blob = new Blob(['\ufeff', html], {
+    type: 'application/msword'
+  });
 
-  saveAs(blob, 'documento_editado.docx');
+  saveAs(blob, 'documento_editado.doc');
 });
