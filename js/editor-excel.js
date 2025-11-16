@@ -13,12 +13,12 @@ document.getElementById('btnCargar').addEventListener('click', () => {
       const datos = XLSX.utils.sheet_to_json(hoja, { header: 1 });
 
       // Eliminar columnas vacías al inicio
-      datos = datos.map((row) => {
-        while (row.length && (row[0] === '' || row[0] == null)) {
-          row.shift();
-        }
-        return row;
-      });
+      //   datos = datos.map((row) => {
+      //     while (row.length && (row[0] === '' || row[0] == null)) {
+      //       row.shift();
+      //     }
+      //     return row;
+      //   });
 
       console.log('DATOS CARGADOS:', datos);
 
