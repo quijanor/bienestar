@@ -12,19 +12,38 @@ document.getElementById('btnCargar').addEventListener('click', () => {
 
       const datos = XLSX.utils.sheet_to_json(hoja, { header: 1 });
 
+      // Eliminar columnas vacías al inicio
+      datos = datos.map((row) => {
+        while (row.length && (row[0] === '' || row[0] == null)) {
+          row.shift();
+        }
+        return row;
+      });
+
       console.log('DATOS CARGADOS:', datos);
 
       datosOriginales = datos;
 
       const contenedor = document.getElementById('excel');
 
+      setTimeout(() => {
+        tabla.scrollViewportTo(0, 5); // ir a columna 5 donde comienzan datos
+      }, 200);
+
       tabla = new Handsontable(contenedor, {
         data: datos,
         rowHeaders: true,
         colHeaders: true,
         width: '100%',
-        height: '500',
-        licenseKey: 'non-commercial-and-evaluation'
+        height: 500,
+        manualColumnResize: true,
+        manualRowResize: true,
+        stretchH: 'all',
+        licenseKey: 'non-commercial-and-evaluation',
+        // 🔥 importante:
+        renderAllRows: false,
+        autoColumnSize: { useHeaders: true },
+        autoRowSize: true
       });
     })
     .catch((err) => alert('Error cargando Excel: ' + err));
