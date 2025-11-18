@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       codigo: 'F-TH-04',
       nombre: 'Formato de asistencia',
       responsable: 'Analista de Bienestar',
-      lugar: 'docs/F-TH-04.xlsx'
+      lugar: 'docs/F-TH-04.docx'
     },
     {
       codigo: 'F-TH-05',
