@@ -11,13 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
       codigo: 'F-TH-02',
       nombre: 'Formato de plan de bienestar laboral',
       responsable: 'Coordinador de Talento Humano',
-      lugar: 'docs/F-TH-02.xlsx'
+      lugar: 'docs/F-TH-02.docx'
     },
     {
       codigo: 'F-TH-03',
       nombre: 'Formato de evaluación de actividades de bienestar',
       responsable: 'Coordinador de Talento Humano',
-      lugar: 'docs/F-TH-03.docx'
+      lugar: 'docs/F-TH-03.xlsx'
     },
     {
       codigo: 'F-TH-04',
