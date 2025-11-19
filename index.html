@@ -41,9 +41,9 @@
         </div>
       </div>
 
-      <!-- Flechas -->
-      <div class="arrow left" data-prev>&#10094;</div>
-      <div class="arrow right" data-next>&#10095;</div>
+      <!-- Flechas (CORREGIDO) -->
+      <div class="arrow left" data-prev="1">&#10094;</div>
+      <div class="arrow right" data-next="1">&#10095;</div>
 
       <!-- Puntos -->
       <div class="dots">
@@ -60,16 +60,13 @@
         <p>
           Implementar un programa integral de bienestar laboral que promueva la
           salud física, emocional y social de los colaboradores, fortaleciendo
-          su motivación, sentido de pertenencia y la calidad del clima
-          organizacional.
+          su motivación y sentido de pertenencia.
         </p>
 
         <h2>Alcance</h2>
         <p>
-          El programa se aplica a todos los colaboradores de la empresa e
-          incluye la planificación, desarrollo y evaluación de actividades
-          orientadas a promover la salud física, emocional y social del
-          personal.
+          El programa se aplica a todos los colaboradores e incluye
+          planificación, desarrollo y evaluación de actividades de bienestar.
         </p>
       </section>
 
@@ -78,66 +75,42 @@
         <h2>Definiciones Clave</h2>
         <ul>
           <li>
-            <strong>Bienestar laboral:</strong> conjunto de estrategias
-            orientadas al mejoramiento físico, mental y social.
+            <strong>Bienestar laboral:</strong> estrategias para mejorar salud y
+            clima laboral.
           </li>
           <li>
             <strong>Clima organizacional:</strong> percepción del entorno de
             trabajo.
           </li>
+          <li><strong>Plan de bienestar:</strong> actividades programadas.</li>
           <li>
-            <strong>Plan de bienestar:</strong> documento con actividades y
-            cronograma.
+            <strong>Salud física:</strong> equilibrio y hábitos saludables.
           </li>
           <li>
-            <strong>Salud física:</strong> equilibrio corporal para actividades
-            laborales.
-          </li>
-          <li>
-            <strong>Salud emocional:</strong> gestión de emociones y estrés.
-          </li>
-          <li>
-            <strong>Bienestar social:</strong> apoyo e integración entre
-            compañeros.
-          </li>
-          <li>
-            <strong>Motivación laboral:</strong> factores que impulsan el
-            compromiso.
-          </li>
-          <li>
-            <strong>Sentido de pertenencia:</strong> identificación con la
-            empresa.
-          </li>
-          <li><strong>Salario emocional:</strong> beneficios no monetarios.</li>
-          <li>
-            <strong>Salud mental:</strong> estado emocional y psicológico.
-          </li>
-          <li>
-            <strong>Cultura organizacional:</strong> valores y prácticas de la
-            empresa.
+            <strong>Salud emocional:</strong> manejo adecuado de emociones.
           </li>
         </ul>
       </section>
 
-      <!-- EQUIPO DE BIENESTAR -->
+      <!-- EQUIPO -->
       <section class="equipo">
         <h2>Equipo de Bienestar Laboral</h2>
 
         <div class="equipo-container">
           <div class="card">
-            <img src="img/personal1.jpeg" alt="Coordinadora de Bienestar" />
+            <img src="img/personal1.jpeg" alt="Coordinadora" />
             <h3>Elizabeth Villamizar Blanco</h3>
             <p>Coordinadora de Bienestar</p>
           </div>
 
           <div class="card">
-            <img src="img/personal2.jpeg" alt="Analista de Bienestar" />
+            <img src="img/personal2.jpeg" alt="Analista" />
             <h3>Carlos Pérez</h3>
             <p>Analista de Bienestar</p>
           </div>
 
           <div class="card">
-            <img src="img/personal3.jpeg" alt="Gestora de Actividades" />
+            <img src="img/personal3.jpeg" alt="Gestora" />
             <h3>Ana Torres</h3>
             <p>Gestora de Actividades</p>
           </div>
@@ -149,10 +122,10 @@
     <div id="footer"></div>
     <script src="js/footer.js"></script>
 
-    <!-- Slider JS -->
+    <!-- SLIDER JS -->
     <script src="js/slider.js"></script>
 
-    <!-- BOTÓN OCULTO PARA BORRAR LOCALSTORAGE -->
+    <!-- BOTÓN OCULTO PARA BORRAR STORAGE -->
     <script>
       let contadorClicks = 0;
       const logo = document.querySelector('.logo-container img');
@@ -163,14 +136,11 @@
 
           if (contadorClicks === 3) {
             localStorage.clear();
-            alert('✔ El almacenamiento local ha sido borrado.');
+            alert('✔ Almacenamiento local borrado');
             contadorClicks = 0;
           }
 
-          // Reinicia si pasa más de 1.5 segundos
-          setTimeout(() => {
-            contadorClicks = 0;
-          }, 1500);
+          setTimeout(() => (contadorClicks = 0), 1500);
         });
       }
     </script>
