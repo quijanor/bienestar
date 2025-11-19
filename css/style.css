@@ -18,7 +18,7 @@ body {
 /* Main debe ocupar el espacio restante */
 main {
   position: relative;
-  z-index: 2;
+  z-index: 0;
 }
 
 /* =====================================================
@@ -100,11 +100,12 @@ nav a {
 .slider-container {
   position: relative;
   width: 100%;
-  height: 280px;   /* AJUSTE SOLICITADO */
+  height: 280px;
   overflow: hidden;
   background: #000;
+  z-index: 1;
+  margin-bottom: 40px;
 }
-
 
 .slider-container input[type="radio"] {
   position: absolute;
