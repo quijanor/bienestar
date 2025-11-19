@@ -116,6 +116,11 @@ nav a {
   background: #000;
 }
 
+.slider-container input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+}
+
 .slider-nav {
   position: absolute;
   bottom: 20px;
@@ -151,7 +156,7 @@ nav a {
   top: 50%;
   z-index: 20;
   transform: translateY(-50%);
-  font-size: 40px;
+  font-size: 20px;
   color: white;
   background: rgba(0,0,0,0.35);
   padding: 8px 12px;
