@@ -1,37 +1,99 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const radios = ['s1', 's2', 's3'];
-  let idx = 0;
-  const total = radios.length;
+  try {
+    const container = document.querySelector('.slider-container');
+    const slidesEl = document.querySelector('.slider .slides');
+    const slideItems = slidesEl ? Array.from(slidesEl.children) : [];
+    const prevButtons = Array.from(document.querySelectorAll('[data-prev]'));
+    const nextButtons = Array.from(document.querySelectorAll('[data-next]'));
+    const dotElements = Array.from(document.querySelectorAll('.dots .dot'));
+    const radioInputs = Array.from(
+      document.querySelectorAll('.slider-container input[type="radio"]')
+    );
 
-  function checkIndex(i) {
-    idx = (i + total) % total;
-    document.getElementById(radios[idx]).checked = true;
+    console.log('Slider init:', {
+      container: !!container,
+      slidesEl: !!slidesEl,
+      slideCount: slideItems.length
+    });
+
+    if (!container || !slidesEl || slideItems.length === 0) {
+      console.warn(
+        'Slider: elementos clave no encontrados. Comprueba HTML/CSS.'
+      );
+      return;
+    }
+
+    let idx = 0;
+    const total = slideItems.length;
+
+    // Sin depender de porcentajes fijos: usamos 100% por slide
+    function goTo(index) {
+      idx = ((index % total) + total) % total;
+      slidesEl.style.transform = `translateX(-${idx * 100}%)`;
+      // activar clase en puntos
+      dotElements.forEach((d, i) => d.classList.toggle('active', i === idx));
+      // sincronizar radios (si existen)
+      if (radioInputs && radioInputs[idx]) {
+        radioInputs[idx].checked = true;
+      }
+      console.log('Slider -> goTo:', idx);
+    }
+
+    // Prev / Next
+    prevButtons.forEach((btn) =>
+      btn.addEventListener('click', () => goTo(idx - 1))
+    );
+    nextButtons.forEach((btn) =>
+      btn.addEventListener('click', () => goTo(idx + 1))
+    );
+
+    // Dots como botones
+    dotElements.forEach((dot, i) => {
+      // si el dot es <label for="..."> el navegador ya cambia el radio; igual lo sincronizamos
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        goTo(i);
+      });
+    });
+
+    // Radios: cuando cambian (por label click), actualizamos idx
+    radioInputs.forEach((r, i) => {
+      r.addEventListener('change', () => {
+        if (r.checked) {
+          goTo(i);
+        }
+      });
+    });
+
+    // Autoplay opcional
+    let autoplay = true;
+    const intervalMs = 4000;
+    let timer = setInterval(() => {
+      if (autoplay) goTo(idx + 1);
+    }, intervalMs);
+
+    container.addEventListener('mouseenter', () => (autoplay = false));
+    container.addEventListener('mouseleave', () => (autoplay = true));
+
+    // Inicializar: si hay un radio marcado, lo usamos; si no, 0
+    const checkedRadio = radioInputs.find((r) => r.checked);
+    if (checkedRadio) {
+      idx = radioInputs.indexOf(checkedRadio);
+    } else {
+      idx = 0;
+      if (radioInputs[0]) radioInputs[0].checked = true;
+    }
+    goTo(idx);
+
+    // Exponer para debugging (opcional)
+    window.__sliderDebug = {
+      goTo,
+      get index() {
+        return idx;
+      },
+      total
+    };
+  } catch (err) {
+    console.error('Slider error:', err);
   }
-
-  document
-    .querySelector('[data-prev]')
-    .addEventListener('click', () => checkIndex(idx - 1));
-  document
-    .querySelector('[data-next]')
-    .addEventListener('click', () => checkIndex(idx + 1));
-
-  document.querySelectorAll('.dots .dot').forEach((dot, i) => {
-    dot.addEventListener('click', () => checkIndex(i));
-  });
-
-  // Autoplay
-  let autoplay = true;
-  setInterval(() => {
-    if (autoplay) checkIndex(idx + 1);
-  }, 4000);
-
-  const container = document.querySelector('.slider-container');
-  container.addEventListener('mouseenter', () => (autoplay = false));
-  container.addEventListener('mouseleave', () => (autoplay = true));
-
-  // Inicializar
-  const initRadio = document.querySelector(
-    '.slider-container input[type="radio"]:checked'
-  );
-  idx = radios.indexOf(initRadio.id);
 });
