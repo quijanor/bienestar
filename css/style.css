@@ -21,7 +21,7 @@ main {
   position: relative;
   padding: 20px;
   background: white;
-  margin: 20px auto;
+  margin: 60px auto 20px auto; /* ✔ corregido */
   width: 80%;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -113,8 +113,10 @@ nav a {
   overflow: hidden;
   background: #000;
   z-index: 99;
+  margin-top: 20px;     /* 🔥 NUEVO */
   margin-bottom: 40px;
 }
+
 
 /* SLIDES */
 .slides {
