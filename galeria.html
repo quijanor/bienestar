@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galería Fotográfica</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/galeria.css" />
+  </head>
+
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header>
+      <div class="logo-container">
+        <img src="img/logo.png" alt="Logo Innovatech" />
+        <h1>Programa de Bienestar Laboral</h1>
+      </div>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="diagnostico.html">Diagnóstico</a>
+        <a href="plan.html">Plan de Bienestar</a>
+        <a href="evaluacion.html">Evaluación</a>
+        <a href="asistencia.html">Asistencia</a>
+        <a href="encuesta.html">Encuesta</a>
+        <a href="formatos.html">Formatos</a>
+        <a href="galeria.html" class="active">Galería</a>
+      </nav>
+    </header>
+
+    <!-- ===== CONTENIDO ===== -->
+    <main>
+      <h2 class="titulo-galeria">Galería de Actividades</h2>
+
+      <!-- Contenedor donde se cargan las imágenes desde JS -->
+      <div class="gallery-grid"></div>
+
+      <!-- Modal para ampliar imagen -->
+      <div class="modal">
+        <span class="close-modal">&times;</span>
+        <img id="modalImg" />
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+    <script src="js/footer.js"></script>
+
+    <!-- Script de la galería -->
+    <script src="js/galeria.js"></script>
+  </body>
+</html>
