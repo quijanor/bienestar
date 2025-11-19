@@ -108,10 +108,12 @@ nav a {
 
 .slider-container {
   position: relative;
-  width: 100%;
-  max-width: 900px;
-  margin: auto;
+  width: 100%;        /* siempre 100% */
+  max-width: none;    /* 🔥 elimina el límite */
+  margin: 0;          /* 🔥 elimina centrado que encoge */
   overflow: hidden;
+  height: 280px;      /* tu altura deseada */
+  background: #000;
 }
 
 .slider-nav {
