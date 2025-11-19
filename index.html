@@ -154,5 +154,21 @@
 
     <!-- Slider JS -->
     <script src="js/slider.js"></script>
+
+    <!-- BORRAR LOCALSTORAGE: Ctrl + Shift + D -->
+    <script>
+      document.addEventListener('keydown', (e) => {
+        if (e.ctrlKey && e.shiftKey && e.key === 'D') {
+          if (
+            confirm(
+              '¿Seguro que deseas borrar todos los datos almacenados en el sistema?'
+            )
+          ) {
+            localStorage.clear();
+            alert('LocalStorage borrado exitosamente.');
+          }
+        }
+      });
+    </script>
   </body>
 </html>
