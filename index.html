@@ -32,7 +32,7 @@
       <input type="radio" name="slides" id="s2" />
       <input type="radio" name="slides" id="s3" />
 
-      <!-- Slider -->
+      <!-- Slides -->
       <div class="slider">
         <div class="slides">
           <img src="img/slider1.jpg" alt="Slide 1" />
@@ -41,9 +41,9 @@
         </div>
       </div>
 
-      <!-- Flechas (CORREGIDO) -->
-      <div class="arrow left" data-prev="1">&#10094;</div>
-      <div class="arrow right" data-next="1">&#10095;</div>
+      <!-- Flechas -->
+      <div class="arrow left" data-prev>&#10094;</div>
+      <div class="arrow right" data-next>&#10095;</div>
 
       <!-- Puntos -->
       <div class="dots">
@@ -60,34 +60,68 @@
         <p>
           Implementar un programa integral de bienestar laboral que promueva la
           salud física, emocional y social de los colaboradores, fortaleciendo
-          su motivación y sentido de pertenencia.
+          su motivación, sentido de pertenencia y la calidad del clima
+          organizacional.
         </p>
 
         <h2>Alcance</h2>
         <p>
-          El programa se aplica a todos los colaboradores e incluye
-          planificación, desarrollo y evaluación de actividades de bienestar.
+          El programa se aplica a todos los colaboradores de la empresa e
+          incluye la planificación, desarrollo y evaluación de actividades
+          orientadas a promover la salud física, emocional y social del
+          personal, con el fin de fortalecer la motivación, el sentido de
+          pertenencia y el clima organizacional en todas las áreas.
         </p>
       </section>
 
-      <!-- DEFINICIONES -->
       <section class="definiciones">
         <h2>Definiciones Clave</h2>
         <ul>
           <li>
-            <strong>Bienestar laboral:</strong> estrategias para mejorar salud y
-            clima laboral.
+            <strong>Bienestar laboral:</strong> conjunto de estrategias y
+            acciones encaminadas al mejoramiento físico, mental y social de los
+            colaboradores. (Trabajo, 2021)
           </li>
           <li>
-            <strong>Clima organizacional:</strong> percepción del entorno de
-            trabajo.
-          </li>
-          <li><strong>Plan de bienestar:</strong> actividades programadas.</li>
-          <li>
-            <strong>Salud física:</strong> equilibrio y hábitos saludables.
+            <strong>Clima organizacional:</strong> percepción general que tienen
+            los colaboradores sobre su entorno de trabajo. (Chiavenato, 2017)
           </li>
           <li>
-            <strong>Salud emocional:</strong> manejo adecuado de emociones.
+            <strong>Plan de bienestar:</strong> documento que contiene las
+            actividades, recursos y cronograma del programa de bienestar
+            laboral. (Pública, 2020)
+          </li>
+          <li>
+            <strong>Salud física:</strong> equilibrio corporal que permite
+            desarrollar actividades laborales sin riesgo. (Salud, 2022)
+          </li>
+          <li>
+            <strong>Salud emocional:</strong> capacidad de gestionar emociones y
+            afrontar el estrés laboral. (Salud O. P., 2021)
+          </li>
+          <li>
+            <strong>Bienestar social:</strong> integración y apoyo entre
+            compañeros de la organización. (Robbins & T.A., 2019)
+          </li>
+          <li>
+            <strong>Motivación laboral:</strong> factores que impulsan al
+            colaborador a trabajar con compromiso. (Maslow, 1954)
+          </li>
+          <li>
+            <strong>Sentido de pertenencia:</strong> identificación y compromiso
+            del colaborador hacia la empresa. (Goleman, 2013)
+          </li>
+          <li>
+            <strong>Salario emocional:</strong> recompensas no monetarias que
+            mejoran la calidad de vida laboral. (Fernández Aguado, 2018)
+          </li>
+          <li>
+            <strong>Salud mental:</strong> estado emocional, psicológico y
+            social del colaborador. (OMS, 2022)
+          </li>
+          <li>
+            <strong>Cultura organizacional:</strong> valores, creencias y
+            prácticas de la empresa. (Schein, 2017)
           </li>
         </ul>
       </section>
@@ -98,19 +132,19 @@
 
         <div class="equipo-container">
           <div class="card">
-            <img src="img/personal1.jpeg" alt="Coordinadora" />
+            <img src="img/personal1.jpeg" alt="Coordinadora de Bienestar" />
             <h3>Elizabeth Villamizar Blanco</h3>
             <p>Coordinadora de Bienestar</p>
           </div>
 
           <div class="card">
-            <img src="img/personal2.jpeg" alt="Analista" />
+            <img src="img/personal2.jpeg" alt="Analista de Bienestar" />
             <h3>Carlos Pérez</h3>
             <p>Analista de Bienestar</p>
           </div>
 
           <div class="card">
-            <img src="img/personal3.jpeg" alt="Gestora" />
+            <img src="img/personal3.jpeg" alt="Gestora de Actividades" />
             <h3>Ana Torres</h3>
             <p>Gestora de Actividades</p>
           </div>
@@ -122,10 +156,10 @@
     <div id="footer"></div>
     <script src="js/footer.js"></script>
 
-    <!-- SLIDER JS -->
+    <!-- Slider JS -->
     <script src="js/slider.js"></script>
 
-    <!-- BOTÓN OCULTO PARA BORRAR STORAGE -->
+    <!-- BOTÓN OCULTO: borrar localStorage con 3 clics -->
     <script>
       let contadorClicks = 0;
       const logo = document.querySelector('.logo-container img');
@@ -136,7 +170,7 @@
 
           if (contadorClicks === 3) {
             localStorage.clear();
-            alert('✔ Almacenamiento local borrado');
+            alert('✔ El almacenamiento local ha sido borrado.');
             contadorClicks = 0;
           }
 
