@@ -1,6 +1,7 @@
 document.getElementById('encuestaForm').addEventListener('submit', (e) => {
   e.preventDefault();
 
+  const colaborador = document.getElementById('colaborador').value;
   const satisfaccion = document.getElementById('satisfaccion').value;
   const emocional = document.getElementById('emocional').value;
   const recomienda = document.getElementById('recomienda').value;
@@ -8,6 +9,7 @@ document.getElementById('encuestaForm').addEventListener('submit', (e) => {
   const comentarios = document.getElementById('comentarios').value;
 
   const registro = {
+    colaborador,
     satisfaccion,
     emocional,
     recomienda,
@@ -34,6 +36,7 @@ function mostrar() {
       .map(
         (e) => `
         <p>
+          <strong>Colaborador:</strong> ${e.colaborador}<br>
           <strong>Satisfacción:</strong> ${e.satisfaccion}<br>
           <strong>Bienestar emocional:</strong> ${e.emocional}<br>
           <strong>¿Recomienda?:</strong> ${e.recomienda}<br>
