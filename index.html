@@ -155,20 +155,27 @@
     <!-- Slider JS -->
     <script src="js/slider.js"></script>
 
-    <!-- BORRAR LOCALSTORAGE: Ctrl + Shift + D -->
     <script>
-      document.addEventListener('keydown', (e) => {
-        if (e.ctrlKey && e.shiftKey && e.key === 'D') {
-          if (
-            confirm(
-              '¿Seguro que deseas borrar todos los datos almacenados en el sistema?'
-            )
-          ) {
+      // BORRAR LOCALSTORAGE CON 3 CLICS EN EL LOGO
+      let contadorClicks = 0;
+      const logo = document.querySelector('.logo-container img');
+
+      if (logo) {
+        logo.addEventListener('click', () => {
+          contadorClicks++;
+
+          if (contadorClicks === 3) {
             localStorage.clear();
-            alert('LocalStorage borrado exitosamente.');
+            alert('✔ El almacenamiento local ha sido borrado.');
+            contadorClicks = 0;
           }
-        }
-      });
+
+          // Reinicia si pasa más de 1.5 segundos entre clics
+          setTimeout(() => {
+            contadorClicks = 0;
+          }, 1500);
+        });
+      }
     </script>
   </body>
 </html>
