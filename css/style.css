@@ -108,6 +108,7 @@ nav a {
   height: 450px;
   overflow: hidden;
   background: #000;
+}
 
 .slider-container input[type="radio"] {
   position: absolute;
