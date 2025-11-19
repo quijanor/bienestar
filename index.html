@@ -6,6 +6,7 @@
     <title>Bienestar Laboral</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
     <!-- HEADER -->
     <header>
@@ -14,13 +15,13 @@
         <h1>Programa de Bienestar Laboral</h1>
       </div>
       <nav>
-        <a href="index.html">Inicio</a>
+        <a href="index.html" class="active">Inicio</a>
         <a href="diagnostico.html">Diagnóstico</a>
         <a href="plan.html">Plan de Bienestar</a>
         <a href="evaluacion.html">Evaluación</a>
         <a href="asistencia.html">Asistencia</a>
         <a href="encuesta.html">Encuesta</a>
-        <a href="formatos.html" class="active">Formatos</a>
+        <a href="formatos.html">Formatos</a>
       </nav>
     </header>
 
@@ -68,68 +69,63 @@
           El programa se aplica a todos los colaboradores de la empresa e
           incluye la planificación, desarrollo y evaluación de actividades
           orientadas a promover la salud física, emocional y social del
-          personal, con el fin de fortalecer la motivación, el sentido de
-          pertenencia y el clima organizacional en todas las áreas.
+          personal.
         </p>
       </section>
 
+      <!-- DEFINICIONES -->
       <section class="definiciones">
         <h2>Definiciones Clave</h2>
         <ul>
           <li>
-            <strong>Bienestar laboral:</strong> conjunto de estrategias y
-            acciones encaminadas al mejoramiento físico, mental y social de los
-            colaboradores. (Trabajo, 2021)
+            <strong>Bienestar laboral:</strong> conjunto de estrategias
+            orientadas al mejoramiento físico, mental y social.
           </li>
           <li>
-            <strong>Clima organizacional:</strong> percepción general que tienen
-            los colaboradores sobre su entorno de trabajo. (Chiavenato, 2017)
+            <strong>Clima organizacional:</strong> percepción del entorno de
+            trabajo.
           </li>
           <li>
-            <strong>Plan de bienestar:</strong> documento que contiene las
-            actividades, recursos y cronograma del programa de bienestar
-            laboral. (Pública, 2020)
+            <strong>Plan de bienestar:</strong> documento con actividades y
+            cronograma.
           </li>
           <li>
-            <strong>Salud física:</strong> equilibrio corporal que permite
-            desarrollar actividades laborales sin riesgo. (Salud, 2022)
+            <strong>Salud física:</strong> equilibrio corporal para actividades
+            laborales.
           </li>
           <li>
-            <strong>Salud emocional:</strong> capacidad de gestionar emociones y
-            afrontar el estrés laboral. (Salud O. P., 2021)
+            <strong>Salud emocional:</strong> gestión de emociones y estrés.
           </li>
           <li>
-            <strong>Bienestar social:</strong> integración y apoyo entre
-            compañeros de la organización. (Robbins & T.A., 2019)
+            <strong>Bienestar social:</strong> apoyo e integración entre
+            compañeros.
           </li>
           <li>
-            <strong>Motivación laboral:</strong> factores que impulsan al
-            colaborador a trabajar con compromiso. (Maslow, 1954)
+            <strong>Motivación laboral:</strong> factores que impulsan el
+            compromiso.
           </li>
           <li>
-            <strong>Sentido de pertenencia:</strong> identificación y compromiso
-            del colaborador hacia la empresa. (Goleman, 2013)
+            <strong>Sentido de pertenencia:</strong> identificación con la
+            empresa.
+          </li>
+          <li><strong>Salario emocional:</strong> beneficios no monetarios.</li>
+          <li>
+            <strong>Salud mental:</strong> estado emocional y psicológico.
           </li>
           <li>
-            <strong>Salario emocional:</strong> recompensas no monetarias que
-            mejoran la calidad de vida laboral. (Fernández Aguado, 2018)
-          </li>
-          <li>
-            <strong>Salud mental:</strong> estado emocional, psicológico y
-            social del colaborador. (OMS, 2022)
-          </li>
-          <li>
-            <strong>Cultura organizacional:</strong> valores, creencias y
-            prácticas de la empresa. (Schein, 2017)
+            <strong>Cultura organizacional:</strong> valores y prácticas de la
+            empresa.
           </li>
         </ul>
       </section>
+
+      <!-- EQUIPO DE BIENESTAR -->
       <section class="equipo">
         <h2>Equipo de Bienestar Laboral</h2>
 
         <div class="equipo-container">
           <div class="card">
-            <img src="img/personal1.jpeg" alt="Coordinador de Bienestar" />
+            <img src="img/personal1.jpeg" alt="Coordinadora de Bienestar" />
             <h3>Elizabeth Villamizar Blanco</h3>
             <p>Coordinadora de Bienestar</p>
           </div>
@@ -141,7 +137,7 @@
           </div>
 
           <div class="card">
-            <img src="img/personal3.jpeg" alt="Gestor de Actividades" />
+            <img src="img/personal3.jpeg" alt="Gestora de Actividades" />
             <h3>Ana Torres</h3>
             <p>Gestora de Actividades</p>
           </div>
@@ -149,14 +145,15 @@
       </section>
     </main>
 
+    <!-- FOOTER -->
     <div id="footer"></div>
     <script src="js/footer.js"></script>
 
     <!-- Slider JS -->
     <script src="js/slider.js"></script>
 
+    <!-- BOTÓN OCULTO PARA BORRAR LOCALSTORAGE -->
     <script>
-      // BORRAR LOCALSTORAGE CON 3 CLICS EN EL LOGO
       let contadorClicks = 0;
       const logo = document.querySelector('.logo-container img');
 
@@ -170,7 +167,7 @@
             contadorClicks = 0;
           }
 
-          // Reinicia si pasa más de 1.5 segundos entre clics
+          // Reinicia si pasa más de 1.5 segundos
           setTimeout(() => {
             contadorClicks = 0;
           }, 1500);
