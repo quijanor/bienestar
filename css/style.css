@@ -132,7 +132,6 @@ nav a {
   object-fit: cover;
 }
 
-/* Movimiento según slide */
 #s1:checked ~ .slider .slides {
   transform: translateX(0%);
 }
@@ -243,15 +242,72 @@ button:hover {
 }
 
 /* =====================================================
-   FOOTER GLOBAL (todas las páginas)
+   EQUIPO DE BIENESTAR (tarjetas)
+   ===================================================== */
+.equipo {
+  margin-top: 40px;
+}
+
+.equipo h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #004b8d;
+}
+
+.equipo-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #004b8d;
+}
+
+.card p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* =====================================================
+   FOOTER GLOBAL
    ===================================================== */
 footer {
   background: #004b8d;
   color: white;
   text-align: center;
-  padding: 19px;
+  padding: 18px;
   font-size: 14px;
-  width: 98%;
+
+  width: 80%;
+  margin: 20px auto 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
 footer p {
