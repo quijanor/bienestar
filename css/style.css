@@ -114,6 +114,7 @@ nav a {
   left: -9999px;
 }
 
+/* Slider */
 .slider {
   width: 100%;
   height: 320px;
@@ -132,14 +133,15 @@ nav a {
   object-fit: cover;
 }
 
+/* Movimientos */
 #s1:checked ~ .slider .slides {
   transform: translateX(0%);
 }
 #s2:checked ~ .slider .slides {
-  transform: translateX(-33.3333%);
+  transform: translateX(-33.333%);
 }
 #s3:checked ~ .slider .slides {
-  transform: translateX(-66.6666%);
+  transform: translateX(-66.666%);
 }
 
 /* Flechas */
@@ -155,20 +157,10 @@ nav a {
   border-radius: 4px;
   cursor: pointer;
   user-select: none;
-  transition: opacity 0.3s;
 }
 
-.arrow:hover {
-  opacity: 1;
-}
-
-.arrow.left {
-  left: 10px;
-}
-
-.arrow.right {
-  right: 10px;
-}
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
 
 /* Puntos */
 .dots {
@@ -179,15 +171,14 @@ nav a {
   z-index: 20;
 }
 
-.dots .dot {
+.dot {
   display: inline-block;
   width: 12px;
   height: 12px;
   margin: 0 6px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255,255,255,0.6);
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 #s1:checked ~ .dots .dot:nth-child(1),
@@ -195,6 +186,7 @@ nav a {
 #s3:checked ~ .dots .dot:nth-child(3) {
   background: #004b8d;
 }
+
 
 /* =====================================================
    INPUTS / FORMULARIOS
