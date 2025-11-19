@@ -6,6 +6,7 @@
     <title>Encuesta</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
     <!-- HEADER -->
     <header>
@@ -19,8 +20,8 @@
         <a href="plan.html">Plan de Bienestar</a>
         <a href="evaluacion.html">Evaluación</a>
         <a href="asistencia.html">Asistencia</a>
-        <a href="encuesta.html">Encuesta</a>
-        <a href="formatos.html" class="active">Formatos</a>
+        <a href="encuesta.html" class="active">Encuesta</a>
+        <a href="formatos.html">Formatos</a>
       </nav>
     </header>
 
@@ -37,16 +38,49 @@
           <option>Regular</option>
           <option>Insatisfecho</option>
         </select>
-        <label>Comentarios adicionales</label
-        ><textarea id="comentarios"></textarea>
+
+        <label
+          >¿La actividad contribuyó a mejorar su bienestar emocional?</label
+        >
+        <select id="emocional" required>
+          <option value="">Seleccionar...</option>
+          <option>Mucho</option>
+          <option>Moderadamente</option>
+          <option>Poco</option>
+          <option>Nada</option>
+        </select>
+
+        <label
+          >¿Recomendaría participar en futuras actividades de bienestar
+          laboral?</label
+        >
+        <select id="recomienda" required>
+          <option value="">Seleccionar...</option>
+          <option>Sí</option>
+          <option>No</option>
+        </select>
+
+        <label>¿Cómo califica la organización de la actividad?</label>
+        <select id="organizacion" required>
+          <option value="">Seleccionar...</option>
+          <option>5 - Excelente</option>
+          <option>4 - Muy buena</option>
+          <option>3 - Buena</option>
+          <option>2 - Regular</option>
+          <option>1 - Mala</option>
+        </select>
+
+        <label>Comentarios adicionales</label>
+        <textarea id="comentarios"></textarea>
+
         <button type="submit">Enviar</button>
       </form>
+
       <div id="lista"></div>
     </main>
 
     <div id="footer"></div>
     <script src="js/footer.js"></script>
-
     <script src="js/encuesta.js"></script>
   </body>
 </html>
