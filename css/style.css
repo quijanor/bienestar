@@ -45,7 +45,7 @@ header {
 
 nav a {
   color: white;
-  margin: 40px auto 20px auto;
+  margin: 0 10px;
   text-decoration: none;
   font-weight: bold;
 }
@@ -278,7 +278,7 @@ footer {
   font-size: 14px;
 
   width: 80%;
-  margin: 20px auto 0 auto;
+  margin: 40px auto 20px auto;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
