@@ -146,9 +146,11 @@ nav a {
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;      /* Mantiene la proporción completa */
+  object-position: center;  /* Centra la imagen en el contenedor */
+  display: block;
+  background: #000;         /* Fondo negro si sobra espacio */
 }
-
 
 /* Flechas */
 .arrow {
