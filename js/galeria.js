@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Lista de imágenes — las puedes reemplazar por las tuyas
   const imagenes = [
-    'img/galeria/1.jpg',
-    'img/galeria/2.jpg',
-    'img/galeria/3.jpg',
-    'img/galeria/4.jpg',
-    'img/galeria/5.jpg',
-    'img/galeria/6.jpg',
-    'img/galeria/7.jpg',
-    'img/galeria/8.jpg'
+    'img/galeria/1.jpeg',
+    'img/galeria/2.jpeg',
+    'img/galeria/3.jpeg',
+    'img/galeria/4.jpeg',
+    'img/galeria/5.jpeg',
+    'img/galeria/6.jpeg',
+    'img/galeria/7.jpeg',
+    'img/galeria/8.jpeg'
   ];
 
   // Construye la galería automáticamente
