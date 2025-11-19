@@ -108,11 +108,12 @@ nav a {
 
 .slider-container {
   position: relative;
-  width: 100%;        /* siempre 100% */
-  max-width: none;    /* 🔥 elimina el límite */
-  margin: 0;          /* 🔥 elimina centrado que encoge */
+  width: 100%;
+  max-width: 900px;   /* o el ancho que quieras */
+  height: auto;
+  aspect-ratio: 16/9; /* mantiene la proporción automáticamente */
+  margin: 20px auto;
   overflow: hidden;
-  height: 280px;      /* tu altura deseada */
   background: #000;
 }
 
@@ -146,10 +147,9 @@ nav a {
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain;      /* Mantiene la proporción completa */
-  object-position: center;  /* Centra la imagen en el contenedor */
+  object-fit: cover;      /* ocupa todo el slider */
+  object-position: center;/* centra la imagen */
   display: block;
-  background: #000;         /* Fondo negro si sobra espacio */
 }
 
 /* Flechas */
