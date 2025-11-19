@@ -109,10 +109,8 @@ nav a {
 .slider-container {
   position: relative;
   width: 100%;
-  max-width: 900px;   /* o el ancho que quieras */
   height: auto;
-  aspect-ratio: 16/9; /* mantiene la proporción automáticamente */
-  margin: 20px auto;
+  aspect-ratio: 36/9; /* mantiene la proporción automáticamente */
   overflow: hidden;
   background: #000;
 }
