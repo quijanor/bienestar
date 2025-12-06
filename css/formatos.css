@@ -1,40 +1,300 @@
-/* formatos.css */
-.table-wrap {
-  overflow-x: auto;
-  margin-top: 20px;
+/* =====================================================
+   FORMATOS - DISEÑO MODERNO CON TARJETAS
+   ===================================================== */
+
+.formatos-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
 }
 
-#formatosTable {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0 auto;
-  max-width: 1100px;
-}
-
-#formatosTable th,
-#formatosTable td {
-  border: 1px solid #e0e0e0;
-  padding: 12px 10px;
-  text-align: left;
-}
-
-#formatosTable thead {
-  background: #f6f8fa;
-}
-
-#formatosTable th {
+.formatos-header h2 {
+  font-size: 2.5rem;
   font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--spacing-sm);
 }
 
-.btn-download {
-  background: #004b8d;
+.formatos-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+.formatos-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid de tarjetas */
+.formatos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+/* Tarjeta individual */
+.formato-card {
+  background: var(--bg-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--border-color);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.formato-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+
+.formato-card:hover::before {
+  transform: scaleX(1);
+}
+
+.formato-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl), var(--shadow-glow);
+  border-color: var(--color-primary);
+}
+
+/* Animaciones escalonadas */
+.formato-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.formato-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.formato-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.formato-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.formato-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* Header de la tarjeta */
+.formato-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.formato-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-lg);
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-md);
+}
+
+.formato-codigo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* Contenido de la tarjeta */
+.formato-nombre {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.4;
+  min-height: 2.8em;
+}
+
+.formato-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.formato-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.formato-info-item .icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.formato-info-label {
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 90px;
+}
+
+/* Botón de descarga moderno */
+.formato-download {
+  width: 100%;
+  padding: var(--spacing-md);
+  background: var(--gradient-primary);
   color: white;
-  padding: 8px 12px;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
 }
 
-.btn-download:hover {
-  background: #003b71;
+.formato-download:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+.formato-download:active {
+  transform: translateY(0);
+}
+
+.formato-download .icon {
+  font-size: 1.2rem;
+}
+
+/* Badge del tipo de archivo */
+.formato-badge {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.formato-badge.docx {
+  color: #2b579a;
+  background: rgba(43, 87, 154, 0.1);
+  border-color: rgba(43, 87, 154, 0.3);
+}
+
+.formato-badge.xlsx {
+  color: #217346;
+  background: rgba(33, 115, 70, 0.1);
+  border-color: rgba(33, 115, 70, 0.3);
+}
+
+.formato-badge.pdf {
+  color: #d32f2f;
+  background: rgba(211, 47, 47, 0.1);
+  border-color: rgba(211, 47, 47, 0.3);
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+@media (max-width: 1024px) {
+  .formatos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .formatos-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .formatos-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .formatos-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .formato-card {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .formatos-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .formato-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .formato-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .formato-info-label {
+    min-width: 80px;
+    font-size: 0.85rem;
+  }
+}
+
+/* =====================================================
+   ESTADO DE CARGA
+   ===================================================== */
+.formato-card.loading {
+  background: linear-gradient(90deg,
+      var(--bg-secondary) 0%,
+      var(--bg-tertiary) 50%,
+      var(--bg-secondary) 100%);
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
 }
