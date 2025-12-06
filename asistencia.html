@@ -1,46 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Asistencia</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!-- HEADER -->
-    <header>
-      <div class="logo-container">
-        <img src="img/logo.png" alt="Logo Innovatech" />
-        <h1>Programa de Bienestar Laboral</h1>
-      </div>
-      <nav>
-        <a href="index.html">Inicio</a>
-        <a href="diagnostico.html">Diagnóstico</a>
-        <a href="plan.html">Plan de Bienestar</a>
-        <a href="evaluacion.html">Evaluación</a>
-        <a href="asistencia.html">Asistencia</a>
-        <a href="encuesta.html">Encuesta</a>
-        <a href="galeria.html" class="active">Galería</a>
-        <a href="formatos.html" class="active">Formatos</a>
-      </nav>
-    </header>
 
-    <main>
-      <form id="asistenciaForm">
-        <label>Nombre del Participante</label
-        ><input type="text" id="nombre" required />
-        <label>Actividad</label>
-        <select id="actividad" required>
-          <option value="">Seleccionar...</option>
-        </select>
-        <button type="submit">Registrar</button>
-      </form>
-      <div id="lista"></div>
-    </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Registro de asistencia a actividades de bienestar laboral." />
+  <title>Asistencia - Bienestar Laboral</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/theme-toggle.js"></script>
+</head>
 
-    <div id="footer"></div>
-    <script src="js/footer.js"></script>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Logo Innovatech" />
+      <h1>Programa de Bienestar Laboral</h1>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="diagnostico.html">Diagnóstico</a>
+      <a href="plan.html">Plan de Bienestar</a>
+      <a href="evaluacion.html">Evaluación</a>
+      <a href="asistencia.html">Asistencia</a>
+      <a href="encuesta.html">Encuesta</a>
+      <a href="galeria.html" class="active">Galería</a>
+      <a href="formatos.html" class="active">Formatos</a>
+    </nav>
+  </header>
 
-    <script src="js/asistencia.js"></script>
-  </body>
+  <main>
+    <form id="asistenciaForm">
+      <label>Nombre del Participante</label><input type="text" id="nombre" required />
+      <label>Actividad</label>
+      <select id="actividad" required>
+        <option value="">Seleccionar...</option>
+      </select>
+      <button type="submit">Registrar</button>
+    </form>
+    <div id="lista"></div>
+  </main>
+
+  <div id="footer"></div>
+  <script src="js/footer.js"></script>
+
+  <script src="js/asistencia.js"></script>
+</body>
+
 </html>

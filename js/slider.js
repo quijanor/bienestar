@@ -75,6 +75,45 @@ document.addEventListener('DOMContentLoaded', () => {
     container.addEventListener('mouseenter', () => (autoplay = false));
     container.addEventListener('mouseleave', () => (autoplay = true));
 
+    // Touch/Swipe support para móviles
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    container.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      autoplay = false;
+    }, { passive: true });
+
+    container.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+      autoplay = true;
+    }, { passive: true });
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const diff = touchStartX - touchEndX;
+
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+          // Swipe left - next slide
+          goTo(idx + 1);
+        } else {
+          // Swipe right - previous slide
+          goTo(idx - 1);
+        }
+      }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        goTo(idx - 1);
+      } else if (e.key === 'ArrowRight') {
+        goTo(idx + 1);
+      }
+    });
+
     // Inicializar: si hay un radio marcado, lo usamos; si no, 0
     const checkedRadio = radioInputs.find((r) => r.checked);
     if (checkedRadio) {
